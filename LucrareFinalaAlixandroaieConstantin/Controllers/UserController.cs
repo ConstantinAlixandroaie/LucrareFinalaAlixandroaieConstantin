@@ -74,6 +74,20 @@ namespace LucrareFinalaAlixandroaieConstantin.Controllers
                                             ArticleId = editedarticle.Id,
                                             UserId = usr.UserId
                                         }).ToListAsync();
+            foreach (var art in editedArticles)
+            {
+                art.Articles = await (from x in _ctx.Articles
+                                      where x.Id == art.Id
+                                      select new ArticleViewModel()
+                                      {
+                                          Id = x.Id,
+                                          Title = x.Title,
+                                          Author = x.Author,
+                                          ArticleText = x.ArticleText,
+                                          IssueDate = x.IssueDate,
+                                          EditedDate = x.EditedDate
+                                      }).ToListAsync();
+            }
                 
             return new UserViewModel()
             {
