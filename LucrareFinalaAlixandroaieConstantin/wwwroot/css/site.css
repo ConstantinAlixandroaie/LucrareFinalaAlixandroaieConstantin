@@ -69,3 +69,15 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+.category {
+    padding: 50px;
+    background-color: white;
+    transition: transform .3s; /* Animation */
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(201, 201, 201, 1), 0 6px 20px 0 rgba(201, 201, 201, 1);
+}
+    .category:hover {
+        transform: scale(1.1);
+    }

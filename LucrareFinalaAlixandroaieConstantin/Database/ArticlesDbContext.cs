@@ -14,7 +14,6 @@ namespace LucrareFinalaAlixandroaieConstantin.Database
         public DbSet<ArticleCategoryMapping> ArticleCategoryMappings { get; set; }
         public DbSet<ArticleUserMapping> ArticleUserMappings { get; set; }
         public DbSet<ArticleEditorMapping> ArticleEditorMappings { get; set; }
-
         protected ArticlesDbContext()
         {
 
