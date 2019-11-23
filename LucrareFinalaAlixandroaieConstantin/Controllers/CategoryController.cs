@@ -20,33 +20,19 @@ namespace LucrareFinalaAlixandroaieConstantin.Controllers
             {
                 throw new ArgumentNullException(nameof(vm));
             }
-            if (vm.CategoryNames == null)
+            if (vm.CategoryName == null)
             {
                 throw new ArgumentException("Category Name cannot be null");
             }
-            //The input field for categories can be a string of multiple categories split by either comma "," or space " "
-            // So I split that field into individual strings and create categories for each string.
-            char[] separator = { ',', ' ' };
-            var categoryname = vm.CategoryNames.Split(separator, StringSplitOptions.None);
-            var categories = await _ctx.Categories.ToListAsync();
-            //here I verify if the category name already exists. if it does I do not want to add another category with the same name
-            //
-            foreach (var categ in categories)
+
+            var category = new Category()
             {
-                foreach (var categname in categoryname)
-                {
-                    if (categ.CategoryName != categname)
-                    {
-                        var category = new Category()
-                        {
-                            CategoryName = categname,
-                        };
-                        _ctx.Categories.Add(category);
-                        await _ctx.SaveChangesAsync();
-                    }
-                }
-            }
+                CategoryName = vm.CategoryName,
+            };
+            _ctx.Categories.Add(category);
+            await _ctx.SaveChangesAsync();
         }
+
         public override Task Delete(int id)
         {
             //most probably never used
@@ -67,7 +53,7 @@ namespace LucrareFinalaAlixandroaieConstantin.Controllers
             {
                 var vm = new CategoryViewModel()
                 {
-                    CategoryNames = category.CategoryName,
+                    CategoryName = category.CategoryName,
                 };
                 rv.Add(vm);
             }

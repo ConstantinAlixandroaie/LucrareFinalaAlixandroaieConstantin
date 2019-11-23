@@ -7,6 +7,7 @@ namespace LucrareFinalaAlixandroaieConstantin.ViewModels
 {
     public class CategoryViewModel
     {
-        public string CategoryNames { get; set; }
+        public int Id { get; set; } 
+        public string CategoryName { get; set; }
     }
 }
