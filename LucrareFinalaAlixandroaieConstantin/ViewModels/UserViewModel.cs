@@ -13,7 +13,6 @@ namespace LucrareFinalaAlixandroaieConstantin.ViewModels
         public string Password { get; set; }
         public string Email { get; set; }
 
-        public List<ArticleUserViewModel> UserArticles { get; set; }
         public List<ArticleEditorViewModel> EditedArticles { get; set; }
     }
 

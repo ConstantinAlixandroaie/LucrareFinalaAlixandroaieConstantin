@@ -11,14 +11,14 @@ namespace LucrareFinalaAlixandroaieConstantin.Migrations
                 name: "ArticleCategoryMappings",
                 columns: table => new
                 {
-                    ArticleCategoryMappingId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ArticleId = table.Column<int>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ArticleCategoryMappings", x => x.ArticleCategoryMappingId);
+                    table.PrimaryKey("PK_ArticleCategoryMappings", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -53,30 +53,16 @@ namespace LucrareFinalaAlixandroaieConstantin.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ArticleUserMappings",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ArticleId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ArticleUserMappings", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Categories",
                 columns: table => new
                 {
-                    CategoryId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.CategoryId);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -105,9 +91,6 @@ namespace LucrareFinalaAlixandroaieConstantin.Migrations
 
             migrationBuilder.DropTable(
                 name: "Articles");
-
-            migrationBuilder.DropTable(
-                name: "ArticleUserMappings");
 
             migrationBuilder.DropTable(
                 name: "Categories");

@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace LucrareFinalaAlixandroaieConstantin.ViewModels
 {
-    public class ArticleUserViewModel
+    public class ArticleCategoryViewModel
     {
         public int Id { get; set; }
         public int ArticleId { get; set; }
-        public int UserId { get; set; }
-
-        public List<ArticleViewModel> Articles { get; set; }
+        public int CategoryId { get; set; }
     }
 }

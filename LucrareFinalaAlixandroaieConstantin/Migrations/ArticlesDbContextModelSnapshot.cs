@@ -48,7 +48,7 @@ namespace LucrareFinalaAlixandroaieConstantin.Migrations
 
             modelBuilder.Entity("LucrareFinalaAlixandroaieConstantin.Database.ArticleCategoryMapping", b =>
                 {
-                    b.Property<int>("ArticleCategoryMappingId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -59,7 +59,7 @@ namespace LucrareFinalaAlixandroaieConstantin.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.HasKey("ArticleCategoryMappingId");
+                    b.HasKey("Id");
 
                     b.ToTable("ArticleCategoryMappings");
                 });
@@ -82,27 +82,9 @@ namespace LucrareFinalaAlixandroaieConstantin.Migrations
                     b.ToTable("ArticleEditorMappings");
                 });
 
-            modelBuilder.Entity("LucrareFinalaAlixandroaieConstantin.Database.ArticleUserMapping", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ArticleId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ArticleUserMappings");
-                });
-
             modelBuilder.Entity("LucrareFinalaAlixandroaieConstantin.Database.Category", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -110,7 +92,7 @@ namespace LucrareFinalaAlixandroaieConstantin.Migrations
                     b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CategoryId");
+                    b.HasKey("Id");
 
                     b.ToTable("Categories");
                 });

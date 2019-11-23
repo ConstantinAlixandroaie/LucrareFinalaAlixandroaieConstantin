@@ -2,7 +2,39 @@
 @model LucrareFinalaAlixandroaieConstantin.Pages.AddArticleModel
 @{
     ViewData["Title"] = "AddArticle";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 <h1>AddArticle</h1>
-
+<form method="post">
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label>Article Title</label>
+                    <input asp-for="Article.Title" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Content</label>
+                    <textarea asp-for="Article.ArticleText"></textarea>
+                    @*<input asp-for="Article.ArticleText" type="text" />*@
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Categories</label>
+                    <input asp-for="Category.CategoryNames" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" asp-page-handler="Add" value="Add Article" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

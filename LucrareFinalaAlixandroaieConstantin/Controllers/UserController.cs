@@ -44,28 +44,6 @@ namespace LucrareFinalaAlixandroaieConstantin.Controllers
             var usr = await _ctx.Users.FirstOrDefaultAsync(x => x.UserId == id);
             if (usr == null)
                 return null;
-            var userArticles = await (from mapping in _ctx.ArticleUserMappings
-                                      join userarticle in _ctx.Articles on mapping.UserId equals usr.UserId
-                                      where mapping.UserId == usr.UserId
-                                      select new ArticleUserViewModel()
-                                      {
-                                          ArticleId = userarticle.Id,
-                                          UserId =usr.UserId
-                                      }).ToListAsync();
-            foreach (var art in userArticles)
-            {
-                art.Articles = await (from x in _ctx.Articles
-                                         where x.Id == art.Id
-                                         select new ArticleViewModel()
-                                         {
-                                             Id = x.Id,
-                                             Title = x.Title,
-                                             Author = x.Author,
-                                             ArticleText = x.ArticleText,
-                                             IssueDate = x.IssueDate,
-                                             EditedDate = x.EditedDate
-                                         }).ToListAsync();
-            }
             var editedArticles = await (from mapping in _ctx.ArticleEditorMappings
                                         join editedarticle in _ctx.Articles on mapping.UserId equals usr.UserId
                                         where mapping.UserId == usr.UserId
@@ -92,7 +70,6 @@ namespace LucrareFinalaAlixandroaieConstantin.Controllers
             return new UserViewModel()
             {
                 EditedArticles=editedArticles,
-                UserArticles = userArticles,
                 UserId = usr.UserId,
                 Username = usr.Username
             };
