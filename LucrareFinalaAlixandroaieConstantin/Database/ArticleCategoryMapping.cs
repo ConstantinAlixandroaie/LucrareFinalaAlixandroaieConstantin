@@ -7,7 +7,7 @@ namespace LucrareFinalaAlixandroaieConstantin.Database
 {
     public class ArticleCategoryMapping
     {
-        public int ArticleCategoryMappingId { get; set; }
+        public int Id { get; set; }
         public int ArticleId { get; set; }
         public int CategoryId { get; set; }
     }
