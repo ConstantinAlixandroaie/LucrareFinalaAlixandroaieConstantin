@@ -14,13 +14,14 @@ namespace LucrareFinalaAlixandroaieConstantin.Pages
     public class ProfileModel : PageModel
     {
         private readonly UserController _userController;
+        private readonly AuthenticationController _authcontroller;
 
         [BindProperty]
         public UserViewModel ViewModel { get; set; }
-
         public ProfileModel(ArticlesDbContext ctx)
         {
             _userController = new UserController(ctx);
+            _authcontroller = new AuthenticationController(ctx);
         }
 
         public async Task<IActionResult> OnGet()
@@ -35,7 +36,6 @@ namespace LucrareFinalaAlixandroaieConstantin.Pages
 
             return Page();
         }
-
         /*public async Task<IActionResult> OnDelete(int id)
         {
             await _userController.RemoveCollectionFromUser(id, ViewModel);

@@ -52,7 +52,7 @@ namespace ProgramareAvansataCA.Pages
                 ModelState.AddModelError(string.Empty, "Invalid username or password.");
             }
 
-            return Page();
+            return RedirectToPage("/Login");
         }
 
         private async Task SignInUser(string username, string id, bool isPersistent)

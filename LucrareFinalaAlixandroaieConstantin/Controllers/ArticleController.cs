@@ -29,7 +29,7 @@ namespace LucrareFinalaAlixandroaieConstantin.Controllers
             {
                 Title = vm.Title,
                 ArticleText = vm.ArticleText,
-                Author = vm.Author, //to be filled with logged in user that performs the add article 
+                Author = vm.Author, 
                 IssueDate = DateTime.Now,
             };
             _ctx.Articles.Add(article);

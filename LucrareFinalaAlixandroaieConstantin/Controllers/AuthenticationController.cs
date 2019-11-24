@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using LucrareFinalaAlixandroaieConstantin.ViewModels;
+using Microsoft.AspNetCore.Http;
 
 namespace LucrareFinalaAlixandroaieConstantin.Controllers
 {
